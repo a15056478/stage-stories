@@ -12,10 +12,8 @@ import '../bloc/story navigator/story_navigator_bloc.dart';
 
 class MyStoryPage extends StatefulWidget {
   final int initialPage;
-  // final List<Widget> storyView;
   const MyStoryPage({
     super.key,
-    // required this.storyView,
     required this.initialPage,
   });
 
@@ -29,12 +27,15 @@ class _MyStoryPageState extends State<MyStoryPage> {
   late StoriesBloc storiesBloc;
   List<Widget> storiesWidget = [];
 
+  /// Function to return story views to slider
   List<Widget> createStoryViews() {
     List<Widget> _list = [];
 
+    // Iterating through users
     for (int i = 0; i < storiesBloc.state.stories.length; i++) {
       List<StoryItem> _tempList = [];
 
+      // Iterating through user story
       storiesBloc.state.stories[i].stories.forEach((element) {
         if (element.type == 'text') {
           _tempList.add(StoryItem.text(
@@ -46,7 +47,7 @@ class _MyStoryPageState extends State<MyStoryPage> {
               url: element.content, controller: storyController));
         }
       });
-
+      // Creating story view for each user
       _list.add(Stack(
         children: [
           StoryView(
@@ -76,15 +77,15 @@ class _MyStoryPageState extends State<MyStoryPage> {
         ],
       ));
     }
-
+    // Returning list of story view
     return _list;
   }
 
   @override
   void initState() {
     storiesBloc = BlocProvider.of<StoriesBloc>(context);
+    // Initializing story views
     storiesWidget = createStoryViews();
-    dPrint('${storiesWidget.length} initial length');
     super.initState();
   }
 
