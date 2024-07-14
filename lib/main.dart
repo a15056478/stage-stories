@@ -21,10 +21,15 @@ void dPrint(dynamic data) {
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  // Initializing firebase app
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
+
+  // Initializing get it (dependency injection)
   unawaited(get_it.init());
+
+  // To detect changes in bloc state
   Bloc.observer = const AppBlocObserver();
   runApp(MultiBlocProvider(providers: [
     BlocProvider(

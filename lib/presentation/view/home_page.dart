@@ -40,26 +40,10 @@ class _HomePageState extends State<HomePage> {
       ),
       body: ListView(
         children: [
-          SizedBox(
-            height: 125.h,
-            child: Center(
-              child: BlocBuilder<StoriesBloc, StoriesState>(
-                builder: (context, state) {
-                  return ListView.separated(
-                    separatorBuilder: (context, index) => SizedBox(
-                      width: 16.w,
-                    ),
-                    scrollDirection: Axis.horizontal,
-                    itemCount: state.stories.length,
-                    itemBuilder: (context, i) => StoryWidget(
-                      currentIndex: i,
-                      stories: state.stories,
-                    ),
-                  );
-                },
-              ),
-            ),
-          ),
+          // Stories list
+          _storiesList(),
+
+          // Home Posts view
           SizedBox(
             height: 24.h,
           ),
@@ -73,6 +57,29 @@ class _HomePageState extends State<HomePage> {
             imagePath: ImagePath.POST2,
           ),
         ],
+      ),
+    );
+  }
+
+  SizedBox _storiesList() {
+    return SizedBox(
+      height: 125.h,
+      child: Center(
+        child: BlocBuilder<StoriesBloc, StoriesState>(
+          builder: (context, state) {
+            return ListView.separated(
+              separatorBuilder: (context, index) => SizedBox(
+                width: 16.w,
+              ),
+              scrollDirection: Axis.horizontal,
+              itemCount: state.stories.length,
+              itemBuilder: (context, i) => StoryWidget(
+                currentIndex: i,
+                stories: state.stories,
+              ),
+            );
+          },
+        ),
       ),
     );
   }
