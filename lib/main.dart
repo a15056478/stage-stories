@@ -33,7 +33,7 @@ void main() async {
     BlocProvider(
       create: (context) => get_it.getItInstance<StoryNavigatorBloc>(),
     ),
-  ], child: MyApp()));
+  ], child: const MyApp()));
 }
 
 class MyApp extends StatelessWidget {
@@ -47,7 +47,7 @@ class MyApp extends StatelessWidget {
       designSize:
           Size(375, MediaQuery.of(context).size.height > 720 ? 815 : 700),
       builder: (context, child) {
-        return MaterialApp(
+        return const MaterialApp(
           debugShowCheckedModeBanner: false,
           home: HomePage(),
         );

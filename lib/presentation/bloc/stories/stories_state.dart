@@ -4,32 +4,32 @@ part of 'stories_bloc.dart';
 sealed class StoriesState extends Equatable {
   final List<UserStories> stories;
 
-  StoriesState({required this.stories});
+  const StoriesState({required this.stories});
 }
 
 final class StoriesInitial extends StoriesState {
-  StoriesInitial({required super.stories});
+  const StoriesInitial({required super.stories});
 
   @override
   List<Object?> get props => [stories];
 }
 
 final class StoriesStateLoading extends StoriesState {
-  StoriesStateLoading({required super.stories});
+  const StoriesStateLoading({required super.stories});
 
   @override
   List<Object?> get props => [stories];
 }
 
 final class StoriesStateUpdated extends StoriesState {
-  StoriesStateUpdated({required super.stories});
+  const StoriesStateUpdated({required super.stories});
 
   @override
   List<Object?> get props => [stories];
 }
 
 final class StoriesStateError extends StoriesState {
-  StoriesStateError({required super.stories});
+  const StoriesStateError({required super.stories});
 
   @override
   List<Object?> get props => [stories];

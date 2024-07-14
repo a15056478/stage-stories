@@ -6,7 +6,7 @@ part 'story_navigator_state.dart';
 
 class StoryNavigatorBloc
     extends Bloc<StoryNavigatorEvent, StoryNavigatorState> {
-  StoryNavigatorBloc() : super(StoryNavigatorInitial(currentIndex: 0)) {
+  StoryNavigatorBloc() : super(const StoryNavigatorInitial(currentIndex: 0)) {
     on<StoryNavigatorEventMoveNext>((event, emit) {
       emit(StoryNavigatorIndexUpdating(currentIndex: state.currentIndex));
       emit(StoryNavigatorIndexUpdated(currentIndex: event.currentIndexIndex));

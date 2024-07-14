@@ -6,14 +6,14 @@ sealed class StoryNavigatorEvent extends Equatable {
 }
 
 class StoryNavigatorEventMoveNext extends StoryNavigatorEvent {
-  StoryNavigatorEventMoveNext({required super.currentIndexIndex});
+  const StoryNavigatorEventMoveNext({required super.currentIndexIndex});
 
   @override
   List<Object?> get props => [currentIndexIndex];
 }
 
 class StoryNavigatorEventLastPage extends StoryNavigatorEvent {
-  StoryNavigatorEventLastPage({required super.currentIndexIndex});
+  const StoryNavigatorEventLastPage({required super.currentIndexIndex});
 
   @override
   List<Object?> get props => [currentIndexIndex];

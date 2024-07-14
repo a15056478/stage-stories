@@ -1,14 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:outline_gradient_button/outline_gradient_button.dart';
-import 'package:stage_stories/common/hexcolor.dart';
-import 'package:stage_stories/main.dart';
-import 'package:story_view/controller/story_controller.dart';
-import 'package:story_view/widgets/story_view.dart';
 import '../../common/text_style.dart';
 import '../../core/model/story/user_stories.dart';
-import '../bloc/story navigator/story_navigator_bloc.dart';
 import '../view/my_story_page.dart';
 
 class StoryWidget extends StatefulWidget {

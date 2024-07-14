@@ -95,7 +95,7 @@ class _MyStoryPageState extends State<MyStoryPage> {
           bloc: BlocProvider.of<StoryNavigatorBloc>(context),
           listener: (context, state) {
             if (state is StoryNavigatorIndexUpdated) {
-              _sliderController.nextPage(Duration(milliseconds: 100));
+              _sliderController.nextPage(const Duration(milliseconds: 100));
             }
             if (state is StoryNavigatorLastPage) {
               Navigator.pop(context);
@@ -105,11 +105,11 @@ class _MyStoryPageState extends State<MyStoryPage> {
             controller: _sliderController,
             initialPage: widget.initialPage,
             enableAutoSlider: false,
-            children: storiesWidget,
-            slideTransform: CubeTransform(),
+            slideTransform: const CubeTransform(),
             onSlideChanged: (value) {
               dPrint(value);
             },
+            children: storiesWidget,
           )),
     );
   }
