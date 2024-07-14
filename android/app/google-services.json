@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "793736621612",
+    "project_id": "stage-stories-63fcb",
+    "storage_bucket": "stage-stories-63fcb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:793736621612:android:43a9247c2519b4af956b89",
+        "android_client_info": {
+          "package_name": "com.example.stage_stories"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBWPEYxKpZu-LCM66yaeM1YuKE7R3JUC40"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
